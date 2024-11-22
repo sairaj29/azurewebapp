@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend</title>
+    <script>
+        function getBackend() {
+            const url = 'http://20.55.33.181:5000/'
+            fetch(url)
+            .then(response => response.json())  
+            .then(json => {
+                console.log(json);
+                document.getElementById("frontend").innerHTML = JSON.stringify(json)
+            })
+        }
+    </script>
+</head>
+<body>
+    <h1>Frontend Application</h1>
+    <button onclick="getBackend()">Fetch Data from Backend</button>
+    <div id="frontend"></div>
+</body>
+</html>
